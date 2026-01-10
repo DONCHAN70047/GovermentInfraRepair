@@ -1,262 +1,242 @@
-/* ============================================================
-   RESET & COMMON (SAFE FOR SPA)
-============================================================ */
-* {
-  box-sizing: border-box;
+/* Using direct color values for all custom utility classes */
+
+/* Primary colors */
+.bg-primary {
+  background-color: var(--primary);
 }
 
-html {
-  scroll-behavior: auto;
+.text-primary {
+  color: var(--primary);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background: #eeeeee; /* IMPORTANT: no black base */
+.text-primary-foreground {
+  color: var(--primary-foreground);
 }
 
-/* Root container must span full width */
-#root {
-  width: 100%;
-  min-height: 100vh;
+/* Secondary colors */
+.bg-secondary {
+  background-color: var(--secondary);
 }
 
-/* ============================================================
-   COMMON LAYOUT
-============================================================ */
-.main-wrapper {
-  width: 100%;
-  max-width: 100%;
-  padding: 15px;
-  margin: 0;
-  text-align: center;
-  overflow-x: hidden;
-  background-color: #fffcf9; /* FIX: avoid side gaps */
+.text-secondary-foreground {
+  color: var(--secondary-foreground);
 }
 
-/* main-content controlled by Layout.css */
-.main-content {
-  background: transparent;
+/* Muted colors */
+.bg-muted {
+  background-color: var(--muted);
 }
 
-/* ============================================================
-   HERO
-============================================================ */
-.hero {
-  padding: 140px 20px;
-  border-radius: 12px;
-  background-color: inherit;
+.text-muted-foreground {
+  color: var(--muted-foreground);
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
+/* Accent colors */
+.bg-accent {
+  background-color: var(--accent);
 }
 
-.subtitle {
-  margin-top: 10px;
-  font-size: 1.2rem;
+.text-accent-foreground {
+  color: var(--accent-foreground);
 }
 
-/* ============================================================
-   ALERT / INFO
-============================================================ */
-.alert-box {
-  margin: 20px auto;
-  padding: 16px;
-  width: 60%;
-  border-radius: 12px;
+/* Card colors */
+.bg-card {
+  background-color: var(--card);
 }
 
-.alert-title {
-  font-size: 1.3rem;
-  font-weight: bold;
+.text-card-foreground {
+  color: var(--card-foreground);
 }
 
-.closed {
-  color: #ffffff;
+/* Border */
+.border-border {
+  border-color: var(--border);
 }
 
-.next-open {
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 12px;
-  width: 50%;
-  color: #050505;
+/* Gradient background */
+.hero-gradient {
+  background: linear-gradient(135deg, #319795 0%, #285e61 100%);
 }
 
-.open-time {
-  font-size: 1.8rem;
-}
-
-/* ============================================================
-   CATEGORY
-============================================================ */
-.category-section {
-  margin-top: 40px;
-  display: flex;
-  gap: 14px;
-  padding: 12px;
-  overflow-x: auto;
-}
-
-.category-btn {
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
+/* Card hover effect */
+.card-hover {
   transition: all 0.3s ease;
 }
 
-.category-btn a {
-  text-decoration: none;
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================================
-   VIEW CONTROL
-============================================================ */
-.mobile-view {
-  display: none !important;
+/* Status badge colors */
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
 }
 
-.desktop-view {
-  display: block;
+.status-in-progress {
+  background-color: #dbeafe;
+  color: #1e40af;
 }
 
-/* ============================================================
-   🌞 LIGHT MODE
-============================================================ */
-body.light-mode {
-  background: #eeeeee;
-  color: #232323;
+.status-resolved {
+  background-color: #d1fae5;
+  color: #065f46;
 }
 
-body.light-mode .hero {
-  background: #eeeeee;
-  color: #232323;
+/* Timeline connector */
+.timeline-connector {
+  position: absolute;
+  left: 1.25rem;
+  top: 2.5rem;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border);
 }
 
-body.light-mode .closed {
-  background: #ff4c4c;
+/* Form input focus */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
 }
 
-body.light-mode .next-open {
-  background: #001f3f;
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-body.light-mode .open-time {
-  color: #ffcf33;
+.btn-primary:hover {
+  background-color: var(--primary-dark);
 }
 
-body.light-mode .category-btn {
-  background: #ffffff;
-  border: 2px solid #ff9832;
-  color: #232323;
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-body.light-mode .category-btn a {
-  color: #232323;
+.btn-secondary:hover {
+  background-color: #e2e8f0;
 }
 
-body.light-mode .category-btn:hover {
-  background: #ffaa32;
-  transform: translateY(-2px);
+/* Mobile menu animation */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
-/* ============================================================
-   🌙 DARK MODE
-============================================================ */
-body.dark-mode {
-  background: #1a1a1a;
-  color: #e0e0e0;
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s ease;
 }
 
-body.dark-mode .main-wrapper {
-  background-color: #1a1a1a;
+/* Added explicit text colors for sections */
+.text-white {
+  color: #ffffff !important;
 }
 
-body.dark-mode .hero {
-  background: #1a1a1a;
-  color: #ffffff;
+.text-gray-900 {
+  color: #111827 !important;
 }
 
-body.dark-mode .closed {
-  background: #b91c1c;
+.text-gray-700 {
+  color: #374151 !important;
 }
 
-body.dark-mode .next-open {
-  background: #0f172a;
+.text-gray-600 {
+  color: #4b5563 !important;
 }
 
-body.dark-mode .open-time {
-  color: #ffa500;
+.text-gray-500 {
+  color: #6b7280 !important;
 }
 
-body.dark-mode .category-btn {
-  background: #2d2d2d;
-  border: 1px solid #444;
-  color: #e0e0e0;
+.text-gray-400 {
+  color: #9ca3af !important;
 }
 
-body.dark-mode .category-btn a {
-  color: #e0e0e0;
+.text-teal-100 {
+  color: #ccfbf1 !important;
 }
 
-body.dark-mode .category-btn:hover {
-  background: #444444;
+.text-teal-600 {
+  color: #0d9488 !important;
 }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media (max-width: 600px) {
-  .desktop-view {
-    display: none !important;
-  }
-
-  .mobile-view {
-    display: block !important;
-  }
-
-  .hero {
-    padding: 30px 15px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .alert-box,
-  .next-open {
-    width: 90%;
-  }
-
-  .open-time {
-    font-size: 1.4rem;
-  }
-
-  .category-section {
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-x: visible;
-  }
-
-  .category-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
+.text-amber-300 {
+  color: #fcd34d !important;
 }
 
-.carousel-no-padding {
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: -10px;
-  width: calc(100% + 20px);
-  border-radius: 10%;
+.text-amber-600 {
+  color: #d97706 !important;
+}
+
+.text-blue-700 {
+  color: #1d4ed8 !important;
+}
+
+/* Background colors */
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+.bg-teal-50 {
+  background-color: #f0fdfa !important;
+}
+
+.bg-teal-600 {
+  background-color: #0d9488 !important;
+}
+
+.bg-teal-700 {
+  background-color: #0f766e !important;
+}
+
+.bg-amber-500 {
+  background-color: #f59e0b !important;
+}
+
+.bg-amber-600 {
+  background-color: #d97706 !important;
+}
+
+.bg-blue-100 {
+  background-color: #dbeafe !important;
+}
+
+.bg-green-100 {
+  background-color: #dcfce7 !important;
+}
+
+/* Border colors */
+.border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db !important;
+}
+
+.border-teal-200 {
+  border-color: #99f6e4 !important;
 }

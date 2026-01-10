@@ -1,136 +1,126 @@
-import React from "react";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-  FaFacebookF,
-} from "react-icons/fa";
-import "./Footer.css";
+import { Link } from "react-router-dom"
+import { MapPin, Mail, Phone, Facebook, Twitter, Instagram } from "lucide-react"
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="mb-footer">
-      <div className="mb-footer-inner">
-        {/* TOP: LINK COLUMNS */}
-        <div className="mb-footer-columns">
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-teal-600 flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <span className="font-bold text-xl text-white">CivicReport</span>
+            </div>
+            <p className="text-sm text-gray-400 mb-4">
+              Empowering citizens to build better communities through efficient reporting and tracking of local civic
+              issues.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/" className="hover:text-teal-400 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/report" className="hover:text-teal-400 transition-colors">
+                  Report Issue
+                </Link>
+              </li>
+              <li>
+                <Link to="/track" className="hover:text-teal-400 transition-colors">
+                  Track Status
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-teal-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-teal-400 transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Categories */}
-          <div className="mb-footer-col">
-            <h4 className="mb-footer-heading">Categories</h4>
-            <ul className="mb-footer-list">
-              <li>Mass gainer</li>
-              <li>Vitamin SUPPLEMENTS</li>
-              <li>PRE workout</li>
-              <li>Fat loss</li>
-              <li>Health Foods</li>
-              <li>Fitness accessories</li>
-              <li>Fitness equipments</li>
-              <li>protein</li>
-              <li>Creatine</li>
+          <div>
+            <h3 className="font-semibold text-white mb-4">Issue Categories</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Roads & Potholes
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Street Lights
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Garbage & Sanitation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Water Supply
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Public Safety
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Products */}
-          <div className="mb-footer-col">
-            <h4 className="mb-footer-heading">Products</h4>
-            <ul className="mb-footer-list">
-              <li>Biozyme Performance Whey</li>
-              <li>Biozyme Whey PR</li>
-              <li>Raw Whey Protein</li>
-              <li>High Protein Oats</li>
-              <li>Super Gainer XXL</li>
-              <li>Creatine</li>
-              <li>High Protein Muesli</li>
-              <li>MB Multivitamin</li>
-              {/* <li>Fish Oil</li>
-              <li>Pre Workout</li>
-              <li>Protein Bars</li> */}
+          {/* Contact */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Contact Us</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-teal-400" />
+                <span>City Hall, 123 Main Street</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-teal-400" />
+                <span>1-800-CIVIC-HELP</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-teal-400" />
+                <span>support@civicreport.gov</span>
+              </li>
             </ul>
-          </div>
-
-          
-
-          {/* Useful Links */}
-          <div className="mb-footer-col">
-            <h4 className="mb-footer-heading">Useful Links</h4>
-            <ul className="mb-footer-list">
-              <li>About Us</li>
-              {/* <li>FAQs</li> */}
-              <li>Blog</li>
-              <li>Trade Partners</li>
-              <li>T &amp; C</li>
-              <li>Coupons</li>
-              <li>Privacy Policy</li>
-              <li>Return &amp; Refund</li>
-              <li>Contact Us</li>
-              {/* <li>Business Enquiry</li> */}
-            </ul>
-          </div>
-
-          {/* Newsletter + Contact + Social */}
-          <div className="mb-footer-col mb-footer-newsletter">
-            <h4 className="mb-footer-heading">Subscribe to Newsletter</h4>
-
-            <form
-              className="mb-footer-subscribe"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input type="email" placeholder="Your Email" />
-              <button type="submit">Submit</button>
-            </form>
-
-            <div className="mb-footer-contact">
-              <div>
-                <span className="mb-footer-contact-icon">📞</span>
-                <span>+91 num</span>
-              </div>
-              <div>
-                <span className="mb-footer-contact-icon">✉️</span>
-                <span classname="email">mail</span>
-              </div>
-            </div>
-
-            <div className="mb-footer-social">
-              <a href="#" aria-label="Instagram">
-                <FaInstagram />
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                <FaLinkedinIn />
-              </a>
-              <a href="#" aria-label="Twitter">
-                <FaTwitter />
-              </a>
-              <a href="#" aria-label="YouTube">
-                <FaYoutube />
-              </a>
-              <a href="#" aria-label="Facebook">
-                <FaFacebookF />
-              </a>
-            </div>
-
-            {/* <div className="mb-footer-payments">
-              <p>✅ 100% Safe &amp; Secure payments:</p>
-              <div className="mb-footer-payment-badges">
-                <span>UPI</span>
-                <span>VISA</span>
-                <span>Mastercard</span>
-                <span>RuPay</span>
-                <span>NetBanking</span>
-              </div>
-            </div> */}
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="mb-footer-bottom">
-          <p>
-            All products are manufactured at FSSAI approved facilities and are
-            not intended to diagnose, treat, cure, or prevent any disease.
-          </p>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} CivicReport. All rights reserved. A Government Initiative.</p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
