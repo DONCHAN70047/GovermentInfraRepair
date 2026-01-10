@@ -1,5 +1,5 @@
 ## Install & Run  
-Comand : (pnpm install)  --For first install
+Comand : (npm install)  --For first install
                  <br/>     For run comand : (pnpm run dev)  -- For website run on localhost
 
 # React + Vite
@@ -21,4 +21,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 ## Website Host Link : 
-  https://supliment-trial-website.vercel.app
+  
