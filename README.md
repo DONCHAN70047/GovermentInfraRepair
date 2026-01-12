@@ -21,4 +21,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 ## Website Host Link : 
-  
+  trial-zeta-ruby.vercel.app
